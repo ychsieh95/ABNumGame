@@ -20,11 +20,9 @@ namespace ABNumGame
                 // 輸入猜測
                 Console.Write(">");
                 string guess = Console.ReadLine();
-
-                // 暫存 TryParse 輸出
-                int iGuess = 0;
+                
                 // 檢測猜測是否符合規範 (長度為 4 與是否皆為數字)
-                if (guess.Length != 4 || !int.TryParse(guess, out iGuess))
+                if (guess.Length != 4 || !guess.All(c => char.IsDigit(c)))
                 {
                     Console.WriteLine("輸入錯誤！大小為 0000 - 9999 的四碼數字。\n");
                 }
